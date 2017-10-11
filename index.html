@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no,email=no" />
+	<title></title>
+	<script>
+		document.addEventListener("touchmove",function(e){e.preventDefault();},{ passive: false });
+		document.querySelector('html').style.fontSize=document.documentElement.clientWidth /10 + 'px';
+	</script>
+	<link rel="stylesheet" type="text/css" href="./assets/css/index.css">
+	<style>
+		 
+		
+
+	</style>
+</head>
+<body>
+	<div id="fly-main-ui">
+		
+		<div id="zmiti-stage-C">
+			<div class="zmiti-logo">
+				<img src='./assets/images/logo.png'/>
+			</div>
+		</div>
+		
+	</div>
+	<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script> 
+	<script src='./assets/js/jquery.min.js'></script>
+	<script>
+		
+		(function(doc){
+
+			
+			var zmitiUtil = {
+				init:function(){
+					var arr = [
+					'./assets/images/1.jpg',
+					'./assets/images/haowai.png',
+					'./assets/images/logo.png',
+					'./assets/images/pos.png',
+					'./assets/images/text.png'
+					]
+					var s = this;
+					this.loading(arr,null,function(){
+						s.setCanvas();
+					})
+				},
+				setCanvas:function(){
+					var canvas = doc.createElement('canvas');
+					this.canvas = canvas;
+					var context = this.canvas.getContext('2d');
+
+					var img = new Image();
+					var s = this;
+					img.onload = function(){
+						s.canvas.width = doc.documentElement.clientWidth;
+						s.canvas.height = this.height/this.width*s.canvas.width;
+						context.drawImage(this,0,0,s.canvas.width,s.canvas.height);
+						s.drawLogo(context);
+						setTimeout(function(){
+							doc.getElementById('img').src = s.canvas.toDataURL();
+						},100)
+
+					}
+					img.src = doc.getElementById('img').src
+				},
+
+				drawLogo:function(context){
+					var img = new Image();
+					img.src = './assets/images/logo.png';
+					context.drawImage(img,0,0)
+				},
+
+				loading:function(arr, fn, fnEnd){
+			        var len = arr.length;
+			        var count = 0;
+			        var i = 0;
+			        
+			        function loadimg() {
+			            if (i === len) {
+			                return;
+			            }
+			            var img = new Image();
+			            img.onload = img.onerror = function(){
+			                count++;
+			                if (i < len - 1) {
+			                    i++;
+			                    loadimg();
+			                    fn && fn(i / (len - 1), img.src);
+			                } else {
+			                    fnEnd && fnEnd(img.src);
+			                }
+			            };
+			            img.src = arr[i];
+			        }
+			       loadimg();
+			    }
+			}	
+
+		//	zmitiUtil.init()
+
+		})(document)
+
+
+	</script>
+</body>
+</html>
