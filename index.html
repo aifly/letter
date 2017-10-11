@@ -23,14 +23,50 @@
 			<div class="zmiti-logo">
 				<img src='./assets/images/logo.png'/>
 			</div>
+			<div class="zmiti-title">
+				十八大今日在北京开幕
+			</div>
+			<div class="zmiti-date">
+				2012-10-8
+			</div>
+			<div class="zmiti-hw">
+				<img src="./assets/images/haowai.png" alt="">
+			</div>
+			<div class="zmiti-info">
+				<div>
+					<img src="./assets/images/head.png" alt="">
+				</div>
+				<div>
+					<img src="./assets/images/pos.png" alt="">
+				</div>
+			</div>
+			<div class="zmiti-text">
+				<img src="./assets/images/text.png" alt="">
+				<div>CERTIFICATE NO.1</div>
+			</div>
+			<div class="zmiti-code">
+				<img src="./assets/images/code.png" alt="">
+			</div>
 		</div>
 		
 	</div>
 	<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script> 
 	<script src='./assets/js/jquery.min.js'></script>
+	<script src='./assets/js/html2canvas.min.js'></script>
 	<script>
 		
 		(function(doc){
+			var dom = $('#zmiti-stage-C')[0];
+			$('.zmiti-hw').on('click',function(){
+				html2canvas(dom, {
+				    onrendered: function(canvas) {
+				    	console.log(canvas.toDataURL())
+				        // canvas is the final rendered <canvas> element
+				    },
+				    width:320,
+				    height:504
+				});
+			})
 
 			
 			var zmitiUtil = {
