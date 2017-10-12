@@ -34,112 +34,37 @@
 			</div>
 			<div class="zmiti-info">
 				<div>
-					<img src="./assets/images/head.png" alt="">
+					<img id="zmiti-headimgurl" src="./assets/images/head.png" alt="" >
 				</div>
 				<div>
 					<img src="./assets/images/pos.png" alt="">
+					<img class="zmiti-nickname" src="http:\/\/api.zmiti.com\/zmiti_ele\/other\/FPzliDSzykT6.png" id='zmiti-nickname1'>
 				</div>
 			</div>
 			<div class="zmiti-text">
+				<div id='zmiti-nickname2'><img class="zmiti-nickname" src="http:\/\/api.zmiti.com\/zmiti_ele\/other\/FPzliDSzykT6.png" ></div>
 				<img src="./assets/images/text.png" alt="">
-				<div>CERTIFICATE NO.1</div>
+				<span id="zmiti-day"></span>
+				
 			</div>
 			<div class="zmiti-code">
 				<img src="./assets/images/code.png" alt="">
+				<div id="zmiti-codenum">CERTIFICATE NO.1</div>
+			</div>
+			<div class="zmiti-qrcode">
+				<div class="zmiti-qrcode-C">
+					<img id='zmiti-qrcode' src='./assets/images/qrcode.jpg'/>
+					<img src='./assets/images/xh-logo.jpg'/>
+				</div>
+				<img src='./assets/images/read.png'/>
 			</div>
 		</div>
-		
+		<div class="zmiti-mask"></div>
 	</div>
 	<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script> 
 	<script src='./assets/js/jquery.min.js'></script>
 	<script src='./assets/js/html2canvas.min.js'></script>
-	<script>
-		
-		(function(doc){
-			var dom = $('#zmiti-stage-C')[0];
-			$('.zmiti-hw').on('click',function(){
-				html2canvas(dom, {
-				    onrendered: function(canvas) {
-				    	console.log(canvas.toDataURL())
-				        // canvas is the final rendered <canvas> element
-				    },
-				    width:320,
-				    height:504
-				});
-			})
+	<script src='./assets/js/index.js'></script>
 
-			
-			var zmitiUtil = {
-				init:function(){
-					var arr = [
-					'./assets/images/1.jpg',
-					'./assets/images/haowai.png',
-					'./assets/images/logo.png',
-					'./assets/images/pos.png',
-					'./assets/images/text.png'
-					]
-					var s = this;
-					this.loading(arr,null,function(){
-						s.setCanvas();
-					})
-				},
-				setCanvas:function(){
-					var canvas = doc.createElement('canvas');
-					this.canvas = canvas;
-					var context = this.canvas.getContext('2d');
-
-					var img = new Image();
-					var s = this;
-					img.onload = function(){
-						s.canvas.width = doc.documentElement.clientWidth;
-						s.canvas.height = this.height/this.width*s.canvas.width;
-						context.drawImage(this,0,0,s.canvas.width,s.canvas.height);
-						s.drawLogo(context);
-						setTimeout(function(){
-							doc.getElementById('img').src = s.canvas.toDataURL();
-						},100)
-
-					}
-					img.src = doc.getElementById('img').src
-				},
-
-				drawLogo:function(context){
-					var img = new Image();
-					img.src = './assets/images/logo.png';
-					context.drawImage(img,0,0)
-				},
-
-				loading:function(arr, fn, fnEnd){
-			        var len = arr.length;
-			        var count = 0;
-			        var i = 0;
-			        
-			        function loadimg() {
-			            if (i === len) {
-			                return;
-			            }
-			            var img = new Image();
-			            img.onload = img.onerror = function(){
-			                count++;
-			                if (i < len - 1) {
-			                    i++;
-			                    loadimg();
-			                    fn && fn(i / (len - 1), img.src);
-			                } else {
-			                    fnEnd && fnEnd(img.src);
-			                }
-			            };
-			            img.src = arr[i];
-			        }
-			       loadimg();
-			    }
-			}	
-
-		//	zmitiUtil.init()
-
-		})(document)
-
-
-	</script>
 </body>
 </html>
