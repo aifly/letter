@@ -9,9 +9,9 @@ var worksid = '1275459017',
 worksid = '8986148900';
 var data = {
 	wxappid: 'wx5ec3d35069383211',
-	wxappsecret: 'd94ea41d9cd2ba03c7cab5fc0e212cec'
+	wxappsecret: 'd94ea41d9cd2ba03c7cab5fc0e212cec'data = {
+
 }
-data = {
 	wxappid: 'wxfacf4a639d9e3bcc',
 	wxappsecret: "149cdef95c99ff7cab523d8beca86080"
 }
@@ -32,14 +32,6 @@ var zmitiUtil = {
 			s.getNum();
 			s.setTitile();
 
-			setTimeout(function() {
-
-					//s.shake();
-					//$('.zmiti-photo').addClass('active');
-				/*$('.zmiti-mask').css({
-					display: 'block'
-				})*/
-				}, 3000)
 				//s.socket();
 		})
 	},
@@ -75,7 +67,6 @@ var zmitiUtil = {
 
 		var randomStr = 'zmiti123' || this.randomString(8);
 		socket.on(randomStr, function(msg) {
-			alert('data => ' + msg);
 			if (!msg) {
 				return;
 			}
@@ -92,6 +83,7 @@ var zmitiUtil = {
 
 	},
 	createImg: function() {
+		var s = this;
 		var dom = $('#zmiti-stage-C')[0];
 		html2canvas(dom, {
 			useCORS: true,
@@ -100,8 +92,17 @@ var zmitiUtil = {
 				//console.log(canvas.toDataURL())
 				var img = doc.createElement('img');
 				img.src = canvas.toDataURL();
-				img.className = 'zmiti-photo'
+				img.className = 'zmiti-photo';
 				doc.body.appendChild(img);
+
+				setTimeout(function(){
+					s.shake();
+					$('.zmiti-photo').addClass('active');
+					
+					$('.zmiti-mask').css({
+						display: 'block'
+					})
+				},1000)
 
 
 			},
@@ -122,7 +123,7 @@ var zmitiUtil = {
 	shake: function() {
 		var s = this;
 		$('#zmiti-stage-C').css({
-			opacity: .5
+			opacity: .1
 		});
 		setTimeout(function() {
 
@@ -540,9 +541,23 @@ var zmitiUtil = {
 
 					s.createHeadimgurl(s.headimgurl);
 
+					var canvas = document.createElement('canvas');
+					canvas.style.border= '1px solid red'
+					var context = canvas.getContext('2d');
+
+					canvas.width = document.documentElement.clientWidth/10*2.2;
+					canvas.height = document.documentElement.clientWidth/10*2.2;
+
+					var img = new Image();
+					img.onload = function(){
+						context.drawImage(this,0,0,canvas.width,canvas.height);
+						$('#zmiti-headimgurl').attr('src',canvas.toDataURL())
+
+					}
+					img.src =s.headimgurl;
+
 					setTimeout(function() {
 						s.createImg();
-
 					}, 2000)
 
 					var posData = s.posData();
@@ -594,7 +609,9 @@ var zmitiUtil = {
 					} else {
 						setTimeout(function() {
 							s.createImg();
-						}, 2000)
+						}, 2000);
+
+		
 					}
 
 				}

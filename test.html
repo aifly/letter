@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<style>
+
+		#box img{width: 100%;}
+	</style>
+</head>
+<body>
+	
+	<div id='box' style="width: 300px;">
+
+		<h1>中华人民共和国</h1>
+	<img id='head' width="300" src='http://wx.qlogo.cn/mmopen/ajNVdqHZLLBdRPD56QKxotqUunpRX0SWvFW9kPLkbDsbU0ibdAXr0MsroicQTZ7MloGWlChPJcya2Via3pq0g704VVkicN1puTstnoJ8QXMk3yU/0'/>
+		
+	</div>
+	<script src='./assets/js/html2canvas.js'></script>
+	<script src='./assets/js/jquery.min.js'></script>
+	<script>
+		
+		$(function(){
+			//$('#head').attr('crossOrigin','Anonymous');
+			html2canvas(document.getElementById('box'),{
+				useCORS:true,
+				onrendered:function(canvas){
+					
+					var img= new Image();
+					img.onload = function(){
+					}
+						document.body.appendChild(canvas);
+					img.src= canvas.toDataURL()
+
+				}
+			})
+		})
+
+	</script>
+
+</body>
+</html> 
