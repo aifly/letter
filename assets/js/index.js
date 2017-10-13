@@ -40,13 +40,18 @@ var zmitiUtil = {
 	},
 
 	bindEvent: function() {
+		var s = this;
 		$('.wx-slide').on('click', function() {
-			$('#fly-main-ui').show();
+			$(this).hide();
 			document.addEventListener("touchmove", function(e) {
 				e.preventDefault();
 			}, {
 				passive: false
 			});
+			$('#zmiti-header').css({
+				display: 'block'
+			});
+			s.createImg();
 		});
 		var i = 0;
 		$('#like3').on('click', function() { //开始点赞
@@ -88,30 +93,28 @@ var zmitiUtil = {
 
 	createImg: function() {
 		var s = this;
-		var dom = $('#zmiti-stage-C')[0];
+		var dom = $('#js_article')[0];
 		html2canvas(dom, {
 			useCORS: true,
 			onrendered: function(canvas) {
 
 				//console.log(canvas.toDataURL())
 				var img = doc.createElement('img');
-				img.src = canvas.toDataURL();
+				img.src = canvas.toDataURL('image/jpg');
 				img.className = 'zmiti-photo';
 				doc.body.appendChild(img);
 
 				setTimeout(function() {
-					s.shake();
-					$('.zmiti-photo').addClass('active');
+					$('.zmiti-photo').addClass('active')
+				}, 100)
 
-					$('.zmiti-mask').css({
-						display: 'block'
-					})
-				}, 1000)
+
+				dom.style.display = 'none';
 
 
 			},
 			width: doc.documentElement.clientWidth,
-			height: doc.documentElement.clientHeight
+			height: $('#js_article').height()
 		});
 	},
 	setTitile: function() { //设置标题和时间
@@ -189,12 +192,12 @@ var zmitiUtil = {
 			}
 		}).done(function(data) {
 			if (data.getret === 0) {
-				$('.zmiti-nickname').attr('src', data.imageurl);
+				$('.wx-name1 img').attr('src', data.imageurl);
 			}
 		})
 	},
 	createHeadimgurl: function(src) {
-		$('#zmiti-headimgurl').attr('src', src)
+		$('#wx-face1').attr('src', src)
 	},
 	setDate: function() {
 		var D = new Date();
@@ -557,23 +560,6 @@ var zmitiUtil = {
 
 					s.createHeadimgurl(s.headimgurl);
 
-					var canvas = document.createElement('canvas');
-					var context = canvas.getContext('2d');
-
-					canvas.width = document.documentElement.clientWidth / 10 * 2.2;
-					canvas.height = document.documentElement.clientWidth / 10 * 2.2;
-
-					var img = new Image();
-					img.onload = function() {
-						context.drawImage(this, 0, 0, canvas.width, canvas.height);
-						$('#zmiti-headimgurl').attr('src', canvas.toDataURL())
-
-					}
-					img.src = s.headimgurl;
-
-					setTimeout(function() {
-						s.createImg();
-					}, 2000)
 
 					var posData = s.posData();
 					var index = Math.random() * posData.length | 0;
@@ -621,13 +607,7 @@ var zmitiUtil = {
 								}
 							}
 						})
-					} else {
-						setTimeout(function() {
-							s.createImg();
-						}, 2000);
-
-
-					}
+					} else {}
 
 				}
 

@@ -9,10 +9,17 @@
 		//document.addEventListener("touchmove",function(e){e.preventDefault();},{ passive: false });
 		document.querySelector('html').style.fontSize=document.documentElement.clientWidth /10 + 'px';
 	</script>
-	<link rel="stylesheet" type="text/css" href="./assets/css/index.css">
+	
 	<link rel="stylesheet" type="text/css" href="./assets/css/wx.css">
 	<style>
-		 
+		 body{
+		 	background: #fff;
+		 }
+
+		 #js_article{
+		 	background: #fff;
+		 	box-sizing: border-box;
+		 }
 		
 
 	</style>
@@ -21,7 +28,9 @@
 
 
 <div id="js_article" class="rich_media">
-
+	<div class="zmiti-header" id="zmiti-header" style="display: none;">
+		<img src="./assets/images/header.jpg" />
+	</div>
     <div class="rich_media_inner">
 
         <div id="page-content" class="rich_media_area_primary">
@@ -79,16 +88,18 @@
         </div>
         <div class="wx-bottom">
             <div class="hr20"></div>
-            <div class="wx-xy">
-                <i></i>
-                <span>北京</span>
+            <div class="wx-qrcode">
+            	<div class="wx-xy">
+                	<i></i>
+	                <span>北京</span>
+	            </div>
+	            <div class="wx-code"></div>
             </div>
-            <div class="wx-code"></div>
         </div>
 
     </div>
 </div>
-	<div id="fly-main-ui" style="display: none;">
+	<!-- <div id="fly-main-ui" style="display: none;">
 		
 		<div id="zmiti-stage-C">
 			<div class="zmiti-logo">
@@ -131,7 +142,7 @@
 			</div>
 		</div>
 		<div class="zmiti-mask"></div>
-	</div>
+	</div> -->
 
 
 	<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script> 
