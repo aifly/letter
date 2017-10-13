@@ -9,9 +9,10 @@ var worksid = '1275459017',
 worksid = '8986148900';
 var data = {
 	wxappid: 'wx5ec3d35069383211',
-	wxappsecret: 'd94ea41d9cd2ba03c7cab5fc0e212cec'data = {
+	wxappsecret: 'd94ea41d9cd2ba03c7cab5fc0e212cec'
 
 }
+data = {
 	wxappid: 'wxfacf4a639d9e3bcc',
 	wxappsecret: "149cdef95c99ff7cab523d8beca86080"
 }
@@ -27,13 +28,35 @@ var zmitiUtil = {
 		]
 		var s = this;
 		s.getOauthurl();
+		s.bindEvent();
 		this.loading(arr, null, function() {
 			s.setDate();
 			s.getNum();
 			s.setTitile();
+			s.like();
 
-				//s.socket();
+			//s.socket();
 		})
+	},
+
+	bindEvent: function() {
+		$('.wx-slide').on('click', function() {
+			$('#fly-main-ui').show();
+			document.addEventListener("touchmove", function(e) {
+				e.preventDefault();
+			}, {
+				passive: false
+			});
+		});
+		var i = 0;
+		$('#like3').on('click', function() { //开始点赞
+			if (i === 0) {
+				var like = $('#likeNum3').html() * 1 + 1;
+				$('#likeNum3').html(like);
+				localStorage.setItem('like', like);
+			}
+			i++;
+		});
 	},
 
 	savePV: function(opt) {
@@ -62,26 +85,7 @@ var zmitiUtil = {
 		}　　
 		return pwd;
 	},
-	socket: function() {
-		var socket = io('http://socket.zmiti.com:2120');
 
-		var randomStr = 'zmiti123' || this.randomString(8);
-		socket.on(randomStr, function(msg) {
-			if (!msg) {
-				return;
-			}
-
-			msg = msg.replace(/&quot;/g, "\"");
-
-			var data = JSON.parse(msg);
-
-			if (data.type !== 'map') {
-				return;
-			}
-		});
-
-
-	},
 	createImg: function() {
 		var s = this;
 		var dom = $('#zmiti-stage-C')[0];
@@ -95,14 +99,14 @@ var zmitiUtil = {
 				img.className = 'zmiti-photo';
 				doc.body.appendChild(img);
 
-				setTimeout(function(){
+				setTimeout(function() {
 					s.shake();
 					$('.zmiti-photo').addClass('active');
-					
+
 					$('.zmiti-mask').css({
 						display: 'block'
 					})
-				},1000)
+				}, 1000)
 
 
 			},
@@ -111,14 +115,16 @@ var zmitiUtil = {
 		});
 	},
 	setTitile: function() { //设置标题和时间
-		var title = this.getQueryString('title');
-		var date = this.getQueryString('date');
+		var title = $('.tit-h2').html();
+		var date = $('#post-date').html();
 		if (title) {
 			$('.zmiti-title').html(decodeURI(title));
 		}
 		if (date) {
 			$('.zmiti-date').html(date);
 		}
+
+
 	},
 	shake: function() {
 		var s = this;
@@ -142,6 +148,7 @@ var zmitiUtil = {
 		}, function(data) {
 			if (data.getret === 0) {
 				$('#zmiti-codenum').html('CERTIFICATE NO.' + (data.worksinfo.totalviewcount + 1))
+				$('#readNum3').html(data.worksinfo.totalviewcount + 1)
 			}
 		})
 
@@ -158,6 +165,14 @@ var zmitiUtil = {
 				$('.zmiti-qrcode').attr('src', data.qrcodeurl);
 			}
 		})
+	},
+
+	like: function() { //点赞
+
+		var random = localStorage.getItem('like') || (Math.random() * 1000 | 0) + 1000;
+		localStorage.setItem('like', random);
+		$('#likeNum3').html(random);
+
 	},
 
 	createNickName: function(nickname) { //生成昵称图片
@@ -534,27 +549,27 @@ var zmitiUtil = {
 					var opt = {
 						nickname: s.nickname,
 						headimgurl: s.headimgurl
-
 					}
+
+					$('.wx-face1 img').attr('src', s.headimgurl)
 
 					s.createNickName(s.nickname)
 
 					s.createHeadimgurl(s.headimgurl);
 
 					var canvas = document.createElement('canvas');
-					canvas.style.border= '1px solid red'
 					var context = canvas.getContext('2d');
 
-					canvas.width = document.documentElement.clientWidth/10*2.2;
-					canvas.height = document.documentElement.clientWidth/10*2.2;
+					canvas.width = document.documentElement.clientWidth / 10 * 2.2;
+					canvas.height = document.documentElement.clientWidth / 10 * 2.2;
 
 					var img = new Image();
-					img.onload = function(){
-						context.drawImage(this,0,0,canvas.width,canvas.height);
-						$('#zmiti-headimgurl').attr('src',canvas.toDataURL())
+					img.onload = function() {
+						context.drawImage(this, 0, 0, canvas.width, canvas.height);
+						$('#zmiti-headimgurl').attr('src', canvas.toDataURL())
 
 					}
-					img.src =s.headimgurl;
+					img.src = s.headimgurl;
 
 					setTimeout(function() {
 						s.createImg();
@@ -611,7 +626,7 @@ var zmitiUtil = {
 							s.createImg();
 						}, 2000);
 
-		
+
 					}
 
 				}
@@ -624,3 +639,8 @@ var zmitiUtil = {
 };
 
 zmitiUtil.init();
+
+
+$(function() {
+
+})

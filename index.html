@@ -6,10 +6,11 @@
 	<meta name="format-detection" content="telephone=no,email=no" />
 	<title></title>
 	<script>
-		document.addEventListener("touchmove",function(e){e.preventDefault();},{ passive: false });
+		//document.addEventListener("touchmove",function(e){e.preventDefault();},{ passive: false });
 		document.querySelector('html').style.fontSize=document.documentElement.clientWidth /10 + 'px';
 	</script>
 	<link rel="stylesheet" type="text/css" href="./assets/css/index.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/wx.css">
 	<style>
 		 
 		
@@ -17,7 +18,77 @@
 	</style>
 </head>
 <body>
-	<div id="fly-main-ui">
+
+
+<div id="js_article" class="rich_media">
+
+    <div class="rich_media_inner">
+
+        <div id="page-content" class="rich_media_area_primary">
+
+            <div id="img-content">
+
+                <h2 class="rich_media_title" id="activity-name"><span class="ico-hw"><span>&nbsp;</span></span><span class="tit-h2">十八大今日在北京开幕</span> </h2>
+                <div id="meta_content" class="rich_media_meta_list wx-source">
+                    <em id="post-date" class="rich_media_meta rich_media_meta_text">2017-10-11</em>
+
+                    <a class="rich_media_meta rich_media_meta_link rich_media_meta_nickname" href="##" id="post-user">新华社</a>
+                    <span class="rich_media_meta rich_media_meta_text rich_media_meta_nickname">新华社</span>
+
+
+                </div>
+                <div class="wx-slide"></div>
+                <div class="wx-message">
+                    <div class="mess-img"><img src="assets/images/img-013.png" width="auto"/></div>
+
+                </div>
+                <div class="hr20"></div>
+                <div class="rich_media_content " id="js_content">
+
+                    <p>11月8日，中国共产党第十八次全国代表大会在北京人民大会堂隆重开幕，胡锦涛同志作报告。
+                    </p>
+
+
+                </div>
+                <div class="hr20"></div>
+                <div class="wx-editor">
+                    <span class="wx-b1"></span>
+                    <span class="wx-b2">
+                        <span class="wx-face1">
+                            <img src="assets/images/img-014.png" />
+                            <i></i>
+                        </span>
+                        <span class="wx-name1">
+                            <img src="assets/images/img-010.jpg" />
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+            <div class="hr10"></div>
+            <div class="rich_media_tool" id="js_toobar3">
+                <div id="js_read_area3" class="media_tool_meta tips_global meta_primary" >浏览量 <span
+                        id="readNum3">0</span></div>
+
+                <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3">
+                    <i class="icon_praise_gray"></i><span class="praise_num" id="likeNum3">3194</span>
+                </span>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="wx-bottom">
+            <div class="hr20"></div>
+            <div class="wx-xy">
+                <i></i>
+                <span>北京</span>
+            </div>
+            <div class="wx-code"></div>
+        </div>
+
+    </div>
+</div>
+	<div id="fly-main-ui" style="display: none;">
 		
 		<div id="zmiti-stage-C">
 			<div class="zmiti-logo">
@@ -38,11 +109,11 @@
 				</div>
 				<div>
 					<img src="./assets/images/pos.png" alt="">
-					<img class="zmiti-nickname" src="http:\/\/api.zmiti.com\/zmiti_ele\/other\/FPzliDSzykT6.png" id='zmiti-nickname1'>
+					<img class="zmiti-nickname" src="http://api.zmiti.com//zmiti_ele//other//k7I8Rc7lQWUH.png" id='zmiti-nickname1'>
 				</div>
 			</div>
 			<div class="zmiti-text">
-				<div id='zmiti-nickname2'><img class="zmiti-nickname" src="http:\/\/api.zmiti.com\/zmiti_ele\/other\/FPzliDSzykT6.png" ></div>
+				<div id='zmiti-nickname2'><img class="zmiti-nickname" src="http://api.zmiti.com//zmiti_ele//other//k7I8Rc7lQWUH.png" ></div>
 				<img src="./assets/images/text.png" alt="">
 				<span id="zmiti-day"></span>
 				
@@ -61,6 +132,8 @@
 		</div>
 		<div class="zmiti-mask"></div>
 	</div>
+
+
 	<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script> 
 	<script src='./assets/js/jquery.min.js'></script>
 	<script src='./assets/js/html2canvas.js'></script>

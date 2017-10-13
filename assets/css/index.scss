@@ -41,6 +41,11 @@ input, textarea {
 
 #fly-main-ui {
   height: 100%;
+  @include pos(f);
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 201;
 }
 
 $baseColor: #811200;
@@ -85,6 +90,7 @@ $baseColor: #811200;
 
     img {
       width: auto;
+      max-width: 3rem;
     }
 
   }
