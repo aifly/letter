@@ -311,12 +311,16 @@ div.wx_dz {
   text-indent: -9999rem;
   @include transition(1s);
 }
-.wx-index-hw{
+
+.wx-index-hw {
   text-align: center;
-  img{
-    width:1.8rem;
+
+  img {
+    width: 1.8rem;
   }
+
 }
+
 .wx-comments {
   background: #f3f3f3;
   font-size: 0.35rem;
@@ -413,7 +417,7 @@ div.wx_dz {
 
 .wx-zhubian {
   text-align: center;
-  padding: 0 0.3rem;
+  padding: .2rem 0.3rem;
   @include boxsizing();
 
   img {
@@ -691,7 +695,8 @@ div.wx_dz {
   position: relative;
   font-size: 0;
   line-height: 1;
-  padding:0.4rem 0 0 0;
+  padding: 0.4rem 0 0 0;
+
   .mess-img {
     min-height: 170px;
 
@@ -740,11 +745,13 @@ div.wx_dz {
 
 .wx-artitle {
   padding-top: 0.4rem;
-  .wx-tit-h5{
-    font-size:0.6rem;
+
+  .wx-tit-h5 {
+    font-size: 0.6rem;
     color: #b82a29;
-    padding:0 0.2rem 0 0.35rem;
+    padding: 0 0.2rem 0 0.35rem;
   }
+
   i, span, em {
     display: inline-block;
   }
@@ -877,6 +884,7 @@ div.wx_dz {
 
   .wx-weui-btn2 {
     text-align: center;
+
     .wx-weui-submit {
       cursor: pointer;
       border: none;
@@ -890,6 +898,7 @@ div.wx_dz {
       text-align: center;
       @include radius();
     }
+
   }
 
 }
