@@ -1,0 +1,171 @@
+/*.ant-btn:focus, .ant-btn:hover,.ant-input:focus, .ant-input:hover {
+    background-color: #fff;
+    border-color: #bf1616;
+    box-shadow: 0 0 0 2px rgba(191, 22, 22, 0.1);
+}*/
+.lt-full {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.zmiti-text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis; }
+
+.zmiti-photo {
+  left: 0;
+  top: 0;
+  width: 8rem;
+  position: relative;
+  z-index: 1000;
+  margin: 0 auto;
+  -webkit-transform: translate3d(0, 0, 1px);
+  transform: translate3d(0, 0, 1px);
+  background: url(../images/img-bg.jpg) no-repeat;
+  background-size: cover;
+  padding: 14px 14px 0 14px; }
+  .zmiti-photo.active {
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform-origin: center 4rem;
+    transform-origin: center 4rem;
+    -webkit-transform: scale(0.65) translate3d(0, 0, 1px);
+    transform: scale(0.65) translate3d(0, 0, 1px); }
+  .zmiti-photo.border:after, .zmiti-photo.border:before {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1; }
+  .zmiti-photo:before, .zmiti-photo:after {
+    content: '';
+    position: absolute;
+    left: -14px;
+    bottom: -14px;
+    width: 100px;
+    height: 100px;
+    background: url(../images/border2.png) no-repeat left bottom;
+    -webkit-transform: translate3d(-40px, 40px, 0);
+    transform: translate3d(-40px, 40px, 0);
+    opacity: 0; }
+  .zmiti-photo:after {
+    background: url(../images/border1.png) no-repeat right top;
+    left: auto;
+    right: -14px;
+    top: -14px;
+    -webkit-transform: translate3d(40px, -40px, 0);
+    transform: translate3d(40px, -40px, 0);
+    bottom: auto; }
+  .zmiti-photo img {
+    box-shadow: 0 0 0 4px #efce88;
+    width: 100%; }
+  .zmiti-photo div {
+    position: absolute;
+    display: none;
+    right: -30px;
+    color: #960e0e;
+    width: 20px;
+    bottom: 0;
+    font-size: .6rem; }
+
+.zmiti-result {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  -webkit-perspective: 800px; }
+
+.zmiti-header {
+  width: 100%; }
+  .zmiti-header img {
+    width: 100%; }
+
+.zmiti-toast {
+  position: fixed;
+  z-index: 10000;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  display: none; }
+
+.zmiti-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: url(../images/arron1.png) no-repeat center top;
+  background-size: cover; }
+
+.zmiti-footer {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: .5rem;
+  z-index: 10; }
+  .zmiti-footer > section {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: horizontal;
+    width: 7rem;
+    margin: 0 auto; }
+    .zmiti-footer > section > aside {
+      -webkit-box-flex: 1;
+      text-align: center; }
+      .zmiti-footer > section > aside img {
+        width: 3rem; }
+  .zmiti-footer > div {
+    text-align: center;
+    height: 1rem;
+    position: relative;
+    top: -.3rem; }
+    .zmiti-footer > div img {
+      width: 6rem; }
+
+.mess-img {
+  overflow: hidden;
+  position: relative; }
+
+.zmiti-rotate {
+  -webkit-animation: zmitirotate 2s linear infinite;
+  animation: zmitirotate 2s linear infinite; }
+
+.barrage-animate {
+  position: absolute;
+  top: 10px;
+  font-weight: bold;
+  z-index: 10;
+  font-size: .4rem;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  width: 420px;
+  -webkit-animation: barrage-animate 10s infinite linear;
+  animation: barrage-animate 10s infinite linear; }
+
+@-webkit-keyframes barrage-animate {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); }
+  to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); } }
+@-webkit-keyframes zmitirotate {
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+
+/*# sourceMappingURL=1.css.map */

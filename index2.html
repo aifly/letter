@@ -1,4 +1,225 @@
-/**
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no,email=no" />
+	<title></title>
+	<script>
+		//document.addEventListener("touchmove",function(e){e.preventDefault();},{ passive: false });
+		document.querySelector('html').style.fontSize=document.documentElement.clientWidth /10 + 'px';
+	</script>
+	
+	<link rel="stylesheet" type="text/css" href="./assets/css/wx.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/1.css">
+	<style>
+	html{
+		height: 100%;
+	}
+		 body{
+		 	background: #fff url(./assets/images/bg.jpg) no-repeat center;
+		 	height: 100%;
+		 }
+
+		 #js_article{
+		 	background: #fff;
+		 	box-sizing: border-box;
+		 }
+		
+		.zmiti-photo img{
+		 
+			box-sizing: border-box;
+		}
+		
+	</style>
+</head>
+<body>
+
+
+<div id="js_article" class="rich_media" style="display: none;">
+	<div class="zmiti-header" id="zmiti-header" style="display: none;">
+		<img src="./assets/images/header.jpg" />
+	</div>
+    <div class="rich_media_inner">
+
+        <div id="page-content" class="rich_media_area_primary">
+            <div class="wx-page-index">
+                <div class="wx-page-index-inner">
+                    <div id="img-content">
+
+                        <div class="wx-artitle">
+                        <span class="wx-th3">
+                            <img src="assets/images/img-031.png">
+                        </span>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="hr20"></div>
+                        <div class="wx-source">
+                            <em>2017-10-11</em>
+                            <span>新华社</span>
+                        </div>
+                        <div class="hr20"></div>
+                        <div class="wx-slide">我要分享</div>
+                        <div class="wx-message">
+                            <div class="mess-img">
+                            	<img src="assets/images/img-016.jpg" width="auto"/>
+                            	
+                            </div>
+                            <!--弹幕开始-->
+                            <div id="danmuarea">
+                                <canvas id="canvasBarrage" class="canvas-barrage">你的浏览器不支持canvas</canvas>
+                            </div>
+                            <div class="wx-open wx-sta1">
+                                <input type='checkbox' checked='checked' id='ishide' value='is' onchange='changehide()'>
+
+                            </div>
+                            <!--弹幕结束-->
+                        </div>
+                        <div class="hr20"></div>
+                        <div class="rich_media_content " id="js_content">
+
+                            <p>11月8日，中国共产党第十八次全国代表大会在北京人民大会堂隆重开幕，胡锦涛同志作报告。
+                            </p>
+
+
+                        </div>
+                        <div class="hr20"></div>
+                        <div class="wx-editor">
+                            <span class="wx-b1"></span>
+                            <span class="wx-b2">
+                                <span class="wx-face1">
+                                    <img src="assets/images/img-014.png" />
+                                    <i>主编</i>
+                                </span>
+                                <span class="wx-name1">
+                                    <img src="assets/images/img-039.png" />
+                                </span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="hr10"></div>
+                    <div class="wx-page-footer">
+						<img src="assets/images/img-038.png" />
+						<div class="wx-page-qcode">
+							<img src="assets/images/img-043.jpg" />
+						</div>
+					</div>
+                    <div class="hr10"></div>
+
+                    <div class="wx-app-sta">
+                        <div class="wx-item-ico wx-count-yd">
+                            <i>浏览量</i><span>63765</span>
+                        </div>
+                        <div class="wx-item-ico wx-count-dz" id="like3">
+                            <i class="icon_praise_gray"></i>
+                            <span>87543</span>
+                        </div>
+                        <div class="wx-item-ico wx-xy">
+                            <i></i>
+                            <span>北京</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<div class="wx-comments" style="display: none;" >
+    <div class="wx-inner">
+        <div class="comm-tips">
+            <span>评论墙</span>
+            <div class="clearfix"></div>
+        </div>
+        <div class="wx-btn1">
+                <span class="wx-btn-span">
+                    <span>
+                        我要上墙
+                    </span>
+                    <i></i>
+                </span>
+        </div>
+        <div class="comm-inner">
+            <ul id="wx-getmessagelist">
+                <!--留言列表-->
+            </ul>
+
+            <div class="comm-tips">
+                <span>以上留言由公众号筛选后显示</span>
+                <div class="clearfix"></div>
+            </div>
+            <div class="hr20"></div>
+            <div class="comm-linkmore">
+                了解留言功能详情
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--message-dialog-->
+<div id="wx-message-dialog" style=" display:none;">
+    <div class="wx-weui-mask"></div>
+    <div class="wx-weui-dialog">
+        <div class="wx-weui-title">十八大今日在北京开幕</div>
+
+        <div class="wx-weui-textarea">
+            <textarea name="usercontent" placeholder=""></textarea>
+        </div>
+        <div class="wx-weui-btn2">
+            <input type="submit" value="提交" />
+        </div>
+    </div>
+</div>
+
+<div class="zmiti-toast">
+	<img src="./assets/images/toast.png">
+</div>
+
+<section id="zmiti-result" style="display: none;">
+	<div class="zmiti-photo  ">
+		<div>长按图像保存到手机</div>
+		<img style="position: relative;z-index: 1;" src='./assets/images/2.png'  />
+	</div>
+<footer class="zmiti-footer" >
+	<section id="zmiti-share-btns">
+		<aside>
+			<img id='zmiti-see' src="./assets/images/see.png">
+		</aside>
+		<aside>
+			<img id="zmiti-mask-btn" src="./assets/images/share-btn.png">
+		</aside>
+	</section>
+
+	<div>
+		<img src="./assets/images/copyright.png">
+	</div>
+</footer>
+<div class="zmiti-mask" id="zmiti-mask" style="display: none;">
+	
+</div>
+</section>
+<audio src='./assets/music/1.mp3' id="audio"></audio>
+	
+
+	<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script> 
+	<script src='./assets/js/jquery.min.js'></script>
+	<script src='./assets/js/html2canvas.js'></script>
+	<script>
+
+		/**
  * Created by fly on 2017/8/9.
  */
 
@@ -42,7 +263,16 @@ var zmitiUtil = {
 			$('#zmiti-share-btns aside:eq(1)').css({
 				display: 'none'
 			});
-			$('#zmiti-share-btns aside:eq(0)').html("<a href='./'><img src='./assets/images/me.png'/></a>")
+			$('#zmiti-share-btns aside:eq(0) img').attr('src', './assets/images/me.png').on('click', function() {
+				$('#zmiti-result').css({
+					display: 'none'
+				}).find('.zmiti-photo').removeClass('active border').find('img').attr('src', './assets/images/share-btn.png');
+
+				$('#zmiti-share-btns aside:eq(1)').css({
+					display: 'block'
+				});
+
+			})
 		} else {
 
 		}
@@ -55,10 +285,7 @@ var zmitiUtil = {
 
 			s.setTitile();
 			s.like();
-			//s.animate();
-			s.getNum();
-
-			//s.createHeadimgurl('http://wx.qlogo.cn/mmopen/ajNVdqHZLLBdRPD56QKxotqUunpRX0SWvFW9kPLkbDsbU0ibdAXr0MsroicQTZ7MloGWlChPJcya2Via3pq0g704VVkicN1puTstnoJ8QXMk3yU/0')
+			s.animate();
 
 			//s.socket();
 		})
@@ -66,14 +293,13 @@ var zmitiUtil = {
 
 	bindEvent: function() {
 		var s = this;
-		s.createQrCode();
 		$('.wx-slide').on('click', function() {
 
 			s.shake();
 			$(this).css({
 				display: 'none'
 			})
-
+			s.createQrCode();
 			$(document).on('touchmove', function(e) {
 				e.preventDefault();
 				return false;
@@ -91,7 +317,7 @@ var zmitiUtil = {
 			$('.wx-sta1').css({
 				opacity: 0
 			})
-			s.createImg()
+
 		});
 		var i = 0;
 		$('#like3').on('click', function() { //开始点赞
@@ -127,9 +353,9 @@ var zmitiUtil = {
 				opacity: 1
 			})
 			$('.wx-sta1').css({
-					opacity: 1
-				})
-				//$('.wx-page-qcode img').attr('src', './assets/images/img-043.jpg')
+				opacity: 1
+			})
+			$('.wx-page-qcode img').attr('src', './assets/images/img-043.jpg')
 
 		});
 		var mask = $('#zmiti-mask');
@@ -233,10 +459,9 @@ var zmitiUtil = {
 					success: function(data) {
 						if (data.getret === 0) {
 							var src = data.getimageurl;
-
 							var URI = window.location.href.split('#')[0];
 							URI = s.changeURLPar(URI, 'nickname', src);
-							s.wxConfig(window.nickname + '在 ' + window.city + '签发了新华社十八大第' + (s.totalviewcount + 1) + '份号外 ', window.nickname + '签发了新华社十八大第' + (s.totalviewcount + 1) + '份号外 ', shareUrl, URI);
+							s.wxConfig('重大新闻！' + window.nickname + '为你报道刚刚收到的消息。 ', window.nickname + '为你报道刚刚收到的消息。已有 ' + (data.worksinfo.totalviewcount + 1) + '位阅读。', shareUrl, URI);
 							///s.wxConfig(window.nickname + '在新华社应聘主编，敬请阅读！', '新华社新媒体中心招聘“刚刚” 主编，已有 ' + (s.totalviewcount + 1) + '位参与应聘，我们期待您的加入！', shareUrl, URI);
 						}
 
@@ -251,11 +476,7 @@ var zmitiUtil = {
 					$('.zmiti-photo').addClass('active');
 
 					setTimeout(() => {
-						$('.zmiti-photo').addClass('border').find('div').css({
-							display: 'block'
-						})
-
-
+						$('.zmiti-photo').addClass('border')
 
 					}, 1000)
 
@@ -306,17 +527,12 @@ var zmitiUtil = {
 		$.post('http://api.zmiti.com/v2/weixin/get_wxuserviewcount/', {
 			worksid: worksid
 		}, function(data) {
-
 			if (data.getret === 0) {
-
 				//$('#zmiti-codenum').html('CERTIFICATE NO.' + (data.worksinfo.totalviewcount + 1))
 				$('.wx-count-yd span').html(data.worksinfo.totalviewcount + 1)
 
 				s.totalviewcount = data.worksinfo.totalviewcount + 1;
-				$('.wx-user-pos em:eq(0)').html((window.nickname || '微信网友') + "：")
-				$('.wx-user-pos em:eq(2)').html(s.totalviewcount)
-					///s.wxConfig('重大新闻！' + window.nickname + '为你报道刚刚收到的消息。 ', window.nickname + '为你报道刚刚收到的消息。已有 ' + (data.worksinfo.totalviewcount + 1) + '位阅读。', shareUrl);
-				s.wxConfig(window.nickname + '在 ' + window.city + '签发了新华社十八大第' + (data.worksinfo.totalviewcount + 1) + '份号外 ', window.nickname + '签发了新华社十八大第' + (data.worksinfo.totalviewcount + 1) + '份号外 ', shareUrl);
+				s.wxConfig('重大新闻！' + window.nickname + '为你报道刚刚收到的消息。 ', window.nickname + '为你报道刚刚收到的消息。已有 ' + (data.worksinfo.totalviewcount + 1) + '位阅读。', shareUrl);
 			}
 		})
 
@@ -331,76 +547,10 @@ var zmitiUtil = {
 			}
 		}).done(function(data) {
 			if (data.getret === 0) {
-				s.createColorQrCode(data.qrcodeurl, function(canvas) {
-						$.ajax({
-							url: 'http://api.zmiti.com/v2/share/base64_image/',
-							type: 'post',
-							data: {
-								setcontents: canvas.toDataURL(),
-								setimage_w: 296,
-								setimage_h: 296
-							},
-							success: function(data) {
-								if (data.getret === 0) {
-									var src = data.getimageurl;
-									$('.wx-page-qcode img').attr('src', src);
-								}
-
-							}
-						})
-
-
-					})
-					//s.createImg();
+				$('.wx-page-qcode img').attr('src', data.qrcodeurl);
+				s.createImg();
 			}
 		})
-	},
-
-	createColorQrCode: function(url, fn) {
-		var canvas1 = document.createElement('canvas');
-		var canvas2 = document.createElement('canvas');
-
-
-		var context1 = canvas1.getContext('2d');
-		var context2 = canvas2.getContext('2d');
-
-		var img = new Image();
-		img.crossOrigin = 'anonymous'; //解决跨域问题，需在服务器端运行，也可为 anonymous   
-		img.onload = function() {
-			img.crossOrigin = '*';
-			canvas1.width = this.width;
-			canvas1.height = this.height;
-
-			canvas2.width = canvas1.width;
-			canvas2.height = canvas1.height;
-			context1.drawImage(this, 0, 0);
-
-			var imgData = context1.getImageData(0, 0, canvas1.width, canvas1.height);
-			var imgW = imgData.width,
-				imgH = imgData.height,
-				data = imgData.data;
-
-			for (var x = 0; x < data.length; x += 4) {
-				if (data[x] === 255 && data[x + 1] === 255 && data[x + 2] === 255 && data[x + 3] === 255) {
-					data[x + 3] = 0;
-					//data[x+1] = 251;
-					//data[x+2] = 238;
-				}
-				if (data[x] === 0 && data[x + 1] === 0 && data[x + 2] === 0 && data[x + 3] === 255) {
-					data[x] = 171;
-					data[x + 1] = 138;
-					data[x + 2] = 108;
-					data[x + 3] = 255;
-				}
-			}
-
-
-
-			context2.putImageData(imgData, 0, 0)
-
-			fn && fn(canvas2);
-		}
-		img.src = url;
 	},
 
 	like: function() { //点赞
@@ -415,10 +565,10 @@ var zmitiUtil = {
 			url: 'http://api.zmiti.com/v2/share/useTxtCreateImg',
 			data: {
 				text: nickname,
-				color: 'ab8a6c',
-				imagewidth: 151 * 10,
-				imageheight: 35 * 10,
-				fontsize: 24 * 10,
+				color: '811200',
+				imagewidth: 90,
+				imageheight: 16,
+				fontsize: 18,
 				isfontweight: true
 			}
 		}).done(function(data) {
@@ -428,8 +578,7 @@ var zmitiUtil = {
 		})
 	},
 	createHeadimgurl: function(src) {
-
-		$('.wx-face1 img').attr('src', src).removeClass('zmiti-rotate')
+		$('.wx-face1').attr('src', src)
 	},
 	setDate: function() {
 		var D = new Date();
@@ -677,135 +826,6 @@ var zmitiUtil = {
 		}
 	},
 
-	getPos: function(nickname, headimgurl) {
-		var s = this;
-		//alert(wx.posData.longitude+'' +wx.posData.latitude)
-		$.ajax({
-			url: 'http://restapi.amap.com/v3/geocode/regeo?key=10df4af5d9266f83b404c007534f0001&location=' + wx.posData.longitude + ',' + wx.posData.latitude + '&poitype=&radius=100&extensions=base&batch=false&roadlevel=1+ ',
-			type: 'get',
-			error() {
-
-			},
-			success(data) {
-
-
-
-				if (data.status === '1' && data.infocode === '10000') {
-
-					var addressComponent = data.regeocode.addressComponent;
-
-					var opt = {
-						type: 'map',
-						address: (addressComponent.province || addressComponent.city[0]) + ' ' + (addressComponent.city || ''),
-						pos: [wx.posData.longitude, wx.posData.latitude],
-						nickname: nickname,
-						headimgurl: headimgurl
-					}
-					window.city = (addressComponent.province || addressComponent.city[0]) + ' ' + (addressComponent.city || '');
-					$('.wx-user-pos em:eq(1)').html(window.city)
-					$('.wx-xy span').html(window.city);
-					s.getNum();
-					var posData = s.posData();
-					var index = Math.random() * posData.length | 0;
-
-
-					$.ajax({
-						url: 'http://api.zmiti.com/v2/weixin/save_userview/',
-						type: 'post',
-						data: {
-							worksid: worksid,
-							wxopenid: s.openid,
-							wxname: nickname,
-							usercity: opt.address,
-							longitude: wx.posData.longitude,
-							latitude: wx.posData.latitude
-						},
-						error: function() {},
-						success: function(data) {}
-					})
-
-
-					$.ajax({
-						url: 'http://api.zmiti.com/v2/weixin/add_wxuser/',
-						type: 'post',
-						data: {
-							wxopenid: s.openid,
-							worksid: worksid,
-							nickname: nickname,
-							headimgurl: headimgurl,
-							longitude: wx.posData.longitude,
-							latitude: wx.posData.latitude,
-							accuracy: wx.posData.accuracy,
-							wxappid: data.wxappid,
-							integral: localStorage.getItem('nickname') ? 0 : 10
-						},
-						error() {
-							//alert('add_wxuser: 服务器返回错误');
-						},
-						success(data) {
-							if (data.getret === 0) {
-
-							} else {
-								//alert('getret  : ' + data.getret + ' msg : ' + data.getmsg + ' .....');
-							}
-						}
-					});
-
-					//获取用户积分
-					//
-					$.ajax({
-						url: 'http://api.zmiti.com/v2/msg/send_msg/',
-						data: {
-							type: worksid,
-							content: JSON.stringify(opt),
-							to: opt.to || ''
-						},
-						success(data) {
-							s.state.showUI = true;
-							s.forceUpdate();
-							//console.log(data);
-						}
-					})
-				} else {
-					///alert('地址信息获取失败')
-					///
-					///
-					var opt = {
-						type: 'map',
-						address: '北京市',
-						pos: [wx.posData.longitude, wx.posData.latitude],
-						nickname: nickname,
-						headimgurl: headimgurl
-					}
-					window.city = '北京市';
-					$('.wx-user-pos em:eq(1)').html(window.city)
-					$('.wx-xy span').html(window.city);
-					s.getNum();
-					var posData = s.posData();
-					var index = Math.random() * posData.length | 0;
-
-
-					$.ajax({
-						url: 'http://api.zmiti.com/v2/weixin/save_userview/',
-						type: 'post',
-						data: {
-							worksid: worksid,
-							wxopenid: s.openid,
-							wxname: nickname,
-							usercity: opt.address,
-							longitude: wx.posData.longitude,
-							latitude: wx.posData.latitude
-						},
-						error: function() {},
-						success: function(data) {
-
-						}
-					})
-				}
-			}
-		})
-	},
-
 	wxConfig: function(title, desc, img, url) {
 		var s = this;
 		var appId = 'wxfacf4a639d9e3bcc'; //'wxfacf4a639d9e3bcc'; // data.wxappid; // 'wxfacf4a639d9e3bcc'; //data.wxappid;
@@ -846,82 +866,7 @@ var zmitiUtil = {
 						] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 				});
 
-				wx.ready(function() {
-
-
-					this.locationFail = true;
-					var _this = this;
-					if (!wx.isLoad) {
-						wx.isLoad = true;
-						wx.getLocation({
-							type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
-							fail: function() {
-								//window.debug && alert('定位失败,重新进入');
-								//window.location.href = window.location.href;
-								var idx = Math.random() * s.pData().length | 0;
-
-								var latitude = s.posData()[idx].lat; // 纬度，浮点数，范围为90 ~ -90
-
-								var longitude = s.posData()[idx].log; // 经度，浮点数，范围为180 ~ -180。
-
-								var accuracy = 100; // 位置精度
-								wx.posData = {
-									longitude,
-									latitude,
-									accuracy
-								};
-
-								if ((s.nickname || s.headimgurl) && s.openid && _this.locationFail) {
-									_this.locationFail = false;
-
-									s.getPos(s.nickname, s.headimgurl);
-
-								}
-							},
-							cancel: function() {
-
-								var idx = Math.random() * s.posData().length | 0;
-
-								var latitude = s.posData()[idx].lat; // 纬度，浮点数，范围为90 ~ -90
-
-								var longitude = s.posData()[idx].log; // 经度，浮点数，范围为180 ~ -180。
-
-								var accuracy = 100; // 位置精度
-								wx.posData = {
-									longitude,
-									latitude,
-									accuracy
-								};
-
-								if ((s.nickname || s.headimgurl) && s.openid && _this.locationFail) {
-									_this.locationFail = false;
-
-									s.getPos(s.nickname, s.headimgurl);
-
-								}
-							},
-							success: function(res) {
-								var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
-								var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
-								var speed = res.speed; // 速度，以米/每秒计
-								var accuracy = res.accuracy; // 位置精度
-
-								wx.posData = {
-									longitude,
-									latitude,
-									accuracy
-								};
-
-								if ((s.nickname || s.headimgurl) && s.openid && _this.locationFail) {
-									_this.locationFail = false;
-									s.getPos(s.nickname, s.headimgurl);
-
-								}
-
-							}
-						});
-					}
-
+				wx.ready(() => {
 
 					//朋友圈
 
@@ -999,26 +944,30 @@ var zmitiUtil = {
 
 					s.createHeadimgurl(s.headimgurl);
 
+					s.getNum();
 
 
-					if (wx.posData && wx.posData.longitude) {
-						s.getPos(dt.userinfo.nickname, dt.userinfo.headimgurl);
-					}
-
-
-
-					/*$.ajax({
-						url:'http://api.zmiti.com/v2/msg/send_msg/',
-						type:'post',
-						data:{
-							type:'zmiti123'||s.getQueryString('socket'),
-							content:JSON.stringify(opt),
-							to:opt.to||''
-						},
-						success(data){
-							//console.log(data);
-						}
-					})*/
+					var posData = s.posData();
+					var index = Math.random() * posData.length | 0;
+					s.savePV({
+							nickname: s.nickname,
+							openid: s.openid,
+							address: posData[index].name,
+							longitude: posData[index].log,
+							latitude: posData[index].lat
+						})
+						/*$.ajax({
+							url:'http://api.zmiti.com/v2/msg/send_msg/',
+							type:'post',
+							data:{
+								type:'zmiti123'||s.getQueryString('socket'),
+								content:JSON.stringify(opt),
+								to:opt.to||''
+							},
+							success(data){
+								//console.log(data);
+							}
+						})*/
 
 
 				} else {
@@ -1062,7 +1011,14 @@ var zmitiUtil = {
 
 };
 
-
 $(function() {
 	zmitiUtil.init();
 })
+
+
+	</script>
+	
+	<script type="text/javascript" src="assets/js/wxTanmu2.js"></script>
+
+</body>
+</html>

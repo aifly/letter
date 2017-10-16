@@ -1,0 +1,184 @@
+@import './base.scss';
+
+.zmiti-photo {
+	left: 0;
+	top: 0;
+	width: 8rem;
+	@include pos(r);
+	z-index: 1000;
+	margin: 0 auto;
+	@include transform(translate3d(0, 0, 1px));
+
+	&.active {
+		@include transition(.3s);
+		@include transformOrigin(center 4rem);
+		@include transform(scale(.65) translate3d(0, 0, 1px));
+	}
+
+	&.border {
+		&:after, &:before {
+			@include transition(.2s);
+			@include transform(translate3d(0, 0, 0));
+			opacity: 1
+		}
+
+	}
+
+	&:before, &:after {
+		content: '';
+		@include pos(a);
+		left: -14px;
+		bottom: -14px;
+		width: 100px;
+		height: 100px;
+		background: url(../images/border2.png) no-repeat left bottom;
+		@include transform(translate3d(-40px, 40px, 0));
+		opacity: 0;
+	}
+
+	&:after {
+		background: url(../images/border1.png) no-repeat right top;
+		left: auto;
+		right: -14px;
+		top: -14px;
+		@include transform(translate3d(40px, -40px, 0));
+		bottom: auto;
+	}
+
+	background: url(../images/img-bg.jpg) no-repeat;
+	background-size: cover;
+	padding: 14px 14px 0 14px;
+
+	img {
+		//@include transform(scale(.9));
+		box-shadow: 0 0 0 4px #efce88;
+		width: 100%;
+	}
+
+	div {
+		@include pos(a);
+		display: none;
+		right: -30px;
+		color: #960e0e;
+		width: 20px;
+		bottom: 0;
+		font-size: .6rem;
+	}
+
+}
+
+.zmiti-result {
+	@include pos(a);
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	overflow: hidden;
+	@include transform3d();
+}
+
+.zmiti-header {
+	width: 100%;
+
+	img {
+		width: 100%;
+	}
+
+}
+
+.zmiti-toast {
+	@include pos(f);
+	z-index: 10000;
+	left: 50%;
+	top: 50%;
+	@include transform(translate3d(-50%, -50%, 0));
+	display: none;
+}
+
+.zmiti-mask {
+	@include pos(a);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background: url(../images/arron1.png) no-repeat center top;
+	background-size: cover;
+}
+
+.zmiti-footer {
+	@include pos(a);
+	width: 80%;
+	left: 10%;
+	bottom: .5rem;
+	z-index: 10;
+
+	&>section {
+		@include displayBox(horizontal);
+		width: 7rem;
+		margin: 0 auto;
+
+		&>aside {
+			-webkit-box-flex: 1;
+			text-align: center;
+
+			img {
+				width: 3rem;
+			}
+
+		}
+
+	}
+
+	&>div {
+		text-align: center;
+		height: 1rem;
+		@include pos(r);
+		top: -.3rem;
+
+		img {
+			width: 6rem;
+		}
+
+	}
+
+}
+
+.mess-img {
+	overflow: hidden;
+	@include pos(r);
+}
+
+.zmiti-rotate {
+	@include animation(zmitirotate 2s linear infinite);
+}
+
+.barrage-animate {
+	@include pos(a);
+	top: 10px;
+	font-weight: bold;
+	z-index: 10;
+	font-size: .4rem;
+	@include transform(translate3d(100%, 0, 0));
+	width: 420px;
+	@include animation(barrage-animate 10s infinite linear);
+}
+
+@-webkit-keyframes barrage-animate {
+	from {
+		@include transform(translate3d(100%, 0, 0));
+	}
+
+	to {
+		@include transform(translate3d(-100%, 0, 0));
+	}
+
+}
+
+@-webkit-keyframes zmitirotate {
+	to {
+		@include transform(rotate(-360deg));
+	}
+
+}
