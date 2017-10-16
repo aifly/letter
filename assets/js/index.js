@@ -236,7 +236,7 @@ var zmitiUtil = {
 
 							var URI = window.location.href.split('#')[0];
 							URI = s.changeURLPar(URI, 'nickname', src);
-							s.wxConfig(window.nickname + '在 ' + window.city + '签发了新华社十八大第' + (s.totalviewcount + 1) + '份号外 ', window.nickname + '签发了新华社十八大第' + (s.totalviewcount + 1) + '份号外 ', shareUrl, URI);
+							s.wxConfig(window.nickname + '在 ' + window.city + '收藏了新华社十八大第' + (s.totalviewcount + 1) + '份号外 ', window.nickname + '收藏了新华社十八大第' + (s.totalviewcount + 1) + '份号外 ', shareUrl, URI);
 							///s.wxConfig(window.nickname + '在新华社应聘主编，敬请阅读！', '新华社新媒体中心招聘“刚刚” 主编，已有 ' + (s.totalviewcount + 1) + '位参与应聘，我们期待您的加入！', shareUrl, URI);
 						}
 
@@ -316,7 +316,7 @@ var zmitiUtil = {
 				$('.wx-user-pos em:eq(0)').html((window.nickname || '微信网友') + "：")
 				$('.wx-user-pos em:eq(2)').html(s.totalviewcount)
 					///s.wxConfig('重大新闻！' + window.nickname + '为你报道刚刚收到的消息。 ', window.nickname + '为你报道刚刚收到的消息。已有 ' + (data.worksinfo.totalviewcount + 1) + '位阅读。', shareUrl);
-				s.wxConfig(window.nickname + '在 ' + window.city + '签发了新华社十八大第' + (data.worksinfo.totalviewcount + 1) + '份号外 ', window.nickname + '签发了新华社十八大第' + (data.worksinfo.totalviewcount + 1) + '份号外 ', shareUrl);
+				s.wxConfig(window.nickname + '在 ' + window.city + '收藏了新华社十八大第' + (data.worksinfo.totalviewcount + 1) + '份号外 ', window.nickname + '收藏了新华社十八大第' + (data.worksinfo.totalviewcount + 1) + '份号外 ', shareUrl);
 			}
 		})
 
