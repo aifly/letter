@@ -337,8 +337,8 @@ var zmitiUtil = {
 							type: 'post',
 							data: {
 								setcontents: canvas.toDataURL(),
-								setimage_w: 296,
-								setimage_h: 296
+								setimage_w: 320,
+								setimage_h: 320
 							},
 							success: function(data) {
 								if (data.getret === 0) {
@@ -382,7 +382,7 @@ var zmitiUtil = {
 
 			for (var x = 0; x < data.length; x += 4) {
 				if (data[x] === 255 && data[x + 1] === 255 && data[x + 2] === 255 && data[x + 3] === 255) {
-					data[x + 3] = 0;
+					//data[x + 3] = 0;
 					//data[x+1] = 251;
 					//data[x+2] = 238;
 				}
@@ -393,8 +393,6 @@ var zmitiUtil = {
 					data[x + 3] = 255;
 				}
 			}
-
-
 
 			context2.putImageData(imgData, 0, 0)
 
