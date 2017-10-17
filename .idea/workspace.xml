@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="547b70b0-38f3-44b7-9913-307a902cc716" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/img-061.png" afterPath="$PROJECT_DIR$/assets/images/img-061.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/img-064.png" afterPath="$PROJECT_DIR$/assets/images/img-064.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/wx.css" afterPath="$PROJECT_DIR$/assets/css/wx.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/wx.css.map" afterPath="$PROJECT_DIR$/assets/css/wx.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/wx.scss" afterPath="$PROJECT_DIR$/assets/css/wx.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/index.js" afterPath="$PROJECT_DIR$/assets/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/wxTanmu2.js" afterPath="$PROJECT_DIR$/assets/js/wxTanmu2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="letter.iws" />
@@ -32,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="769">
-              <caret line="217" column="7" selection-start-line="217" selection-start-column="7" selection-end-line="217" selection-end-column="7" />
+              <caret line="219" column="7" selection-start-line="219" selection-start-column="7" selection-end-line="219" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -272,7 +275,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="769">
-          <caret line="217" column="7" selection-start-line="217" selection-start-column="7" selection-end-line="217" selection-end-column="7" />
+          <caret line="219" column="7" selection-start-line="219" selection-start-column="7" selection-end-line="219" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
