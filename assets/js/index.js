@@ -386,9 +386,9 @@ var zmitiUtil = {
 					//data[x+2] = 238;
 				}
 				if (data[x] === 0 && data[x + 1] === 0 && data[x + 2] === 0 && data[x + 3] === 255) {
-					data[x] = 171;
-					data[x + 1] = 138;
-					data[x + 2] = 108;
+					data[x] = 78;
+					data[x + 1] = 66;
+					data[x + 2] = 66;
 					data[x + 3] = 255;
 				}
 			}
