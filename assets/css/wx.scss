@@ -1,4 +1,5 @@
 @import './base.scss';
+$baseColor: #fcffb4;
 
 html {
   -ms-text-size-adjust: 100%;
@@ -265,15 +266,8 @@ div.wx_dz {
   position: relative;
   @include boxsizing();
   padding: 0.4rem 0 0 0.35rem;  /*text-align: center;*/
-  color: #fdfb71;
+  color: #fdfb74;
   font-size: 0.35rem;
-
-  em {
-    width: 102px;
-    color: #8c8c8c;
-    font-style: normal;
-    display: inline-block;
-  }
 
   span {
     color: #607fa6;
@@ -302,8 +296,8 @@ div.wx_dz {
   display: inline-block;
   position: fixed;
   z-index: 200;
-  right: 1rem;
-  top: 3.5rem;
+  right: .5rem;
+  top: 24px;
   width: 1.4rem;
   height: 1.4rem;
   background: url("../images/img-033.png") no-repeat;
@@ -443,7 +437,7 @@ div.wx_dz {
   .wx-b1 {
     width: 3.5rem;
     height: 1.2rem;
-    border-right: 1px #b9b9aa solid;
+    border-right: 1px $baseColor solid;
     padding: 0 0.43rem 0 0;
     margin: 0 0.35rem 0 0;
     text-align: right;
@@ -530,7 +524,7 @@ div.wx_dz {
 }
 
 .wx-app-sta {
-  color: #ab8a6c;
+  color: $baseColor;
   font-size: 0.35rem;
 
   .wx-count-yd {
@@ -566,11 +560,11 @@ div.wx_dz {
     position: absolute;
     left: 0.1rem;
     bottom: 0;
-    color: #ccb18d;
+    color: #4e4242;
   }
 
   .wx-user-pos {
-    color: #ab8a6c;
+    color: #4e4242;
     width: 6rem;
     float: left;
     font-weight: bold;
@@ -578,7 +572,7 @@ div.wx_dz {
 
     em {
       font-style: normal;
-      color: #b82a29;
+      color: #fc282a;
     }
 
     p {
@@ -635,11 +629,11 @@ div.wx_dz {
 }
 
 .wx-page-index {
-  border: 1px solid #ab8a6c;
+  border: 2px solid #fc282a;
   padding: 4px;
 
   .wx-page-index-inner {
-    border: 1px solid #ab8a6c;
+    border: 1px solid #fc282a;
   }
 
 }
@@ -685,7 +679,7 @@ div.wx_dz {
   @include boxsizing();
 
   p {
-    color: #593939;
+    color: #fdfb74;
     text-indent: 2em;
   }
 
@@ -743,13 +737,34 @@ div.wx_dz {
 
 }
 
+.zmiti-barrage-btn {
+  @include pos(a);
+  right: .5rem;
+  width: 1.5rem;
+  top: -10px;
+
+  img {
+    width: 100%
+  }
+
+}
+
+.zmiti-index-content {
+  background: url(../images/bg1.jpg) no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .wx-artitle {
   padding-top: 0.4rem;
 
   .wx-tit-h5 {
     font-size: 0.6rem;
     color: #b82a29;
-    padding: 0 0.2rem 0 0.35rem;
+    padding: 1rem 0.2rem 0 0.35rem;
+    text-align: center;
+    font-weight: bold;
+    color: $baseColor;
   }
 
   i, span, em {
@@ -942,10 +957,10 @@ div.wx_dz {
   }
 
   .wx-source {
-    em {
-      width: 97px;
-    }
-
+    text-align: center;
+    width: 4rem;
+    color: #fdfb74;
+    margin: 0 auto;
   }
 
 }

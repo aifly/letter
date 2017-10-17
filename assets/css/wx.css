@@ -215,13 +215,8 @@ div.wx_dz span.t1 {
   -moz-box-sizing: border-box;
   padding: 0.4rem 0 0 0.35rem;
   /*text-align: center;*/
-  color: #fdfb71;
+  color: #fdfb74;
   font-size: 0.35rem; }
-  .wx-source em {
-    width: 102px;
-    color: #8c8c8c;
-    font-style: normal;
-    display: inline-block; }
   .wx-source span {
     color: #607fa6;
     display: inline-block;
@@ -242,8 +237,8 @@ div.wx_dz span.t1 {
   display: inline-block;
   position: fixed;
   z-index: 200;
-  right: 1rem;
-  top: 3.5rem;
+  right: .5rem;
+  top: 24px;
   width: 1.4rem;
   height: 1.4rem;
   background: url("../images/img-033.png") no-repeat;
@@ -337,7 +332,7 @@ div.wx_dz span.t1 {
   .wx-editor .wx-b1 {
     width: 3.5rem;
     height: 1.2rem;
-    border-right: 1px #b9b9aa solid;
+    border-right: 1px #fcffb4 solid;
     padding: 0 0.43rem 0 0;
     margin: 0 0.35rem 0 0;
     text-align: right; }
@@ -396,7 +391,7 @@ div.wx_dz span.t1 {
   background-size: 100% auto; }
 
 .wx-app-sta {
-  color: #ab8a6c;
+  color: #fcffb4;
   font-size: 0.35rem; }
   .wx-app-sta .wx-count-yd {
     width: 60%;
@@ -422,16 +417,16 @@ div.wx_dz span.t1 {
     position: absolute;
     left: 0.1rem;
     bottom: 0;
-    color: #ccb18d; }
+    color: #4e4242; }
   .wx-user-cons .wx-user-pos {
-    color: #ab8a6c;
+    color: #4e4242;
     width: 6rem;
     float: left;
     font-weight: bold;
     line-height: 1.8; }
     .wx-user-cons .wx-user-pos em {
       font-style: normal;
-      color: #b82a29; }
+      color: #fc282a; }
     .wx-user-cons .wx-user-pos p {
       text-indent: 2em; }
       .wx-user-cons .wx-user-pos p em {
@@ -462,10 +457,10 @@ div.wx_dz span.t1 {
       display: block; }
 
 .wx-page-index {
-  border: 1px solid #ab8a6c;
+  border: 2px solid #fc282a;
   padding: 4px; }
   .wx-page-index .wx-page-index-inner {
-    border: 1px solid #ab8a6c; }
+    border: 1px solid #fc282a; }
 
 .wx-page-index-inner-sub2 {
   padding: 0.05rem 0.3rem 0.3rem 0.3rem;
@@ -502,7 +497,7 @@ div.wx_dz span.t1 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; }
   .wx-index-text p {
-    color: #593939;
+    color: #fdfb74;
     text-indent: 2em; }
 
 .wx-message {
@@ -540,12 +535,28 @@ div.wx_dz span.t1 {
   .wx-message .wx-sta2 {
     background-image: url("../images/ico-s2.png"); }
 
+.zmiti-barrage-btn {
+  position: absolute;
+  right: .5rem;
+  width: 1.5rem;
+  top: -10px; }
+  .zmiti-barrage-btn img {
+    width: 100%; }
+
+.zmiti-index-content {
+  background: url(../images/bg1.jpg) no-repeat center;
+  background-size: cover;
+  overflow: hidden; }
+
 .wx-artitle {
   padding-top: 0.4rem; }
   .wx-artitle .wx-tit-h5 {
     font-size: 0.6rem;
     color: #b82a29;
-    padding: 0 0.2rem 0 0.35rem; }
+    padding: 1rem 0.2rem 0 0.35rem;
+    text-align: center;
+    font-weight: bold;
+    color: #fcffb4; }
   .wx-artitle i, .wx-artitle span, .wx-artitle em {
     display: inline-block; }
   .wx-artitle i {
@@ -670,7 +681,10 @@ div.wx_dz span.t1 {
     .ico-hw span {
       width: 75px; }
 
-  .wx-source em {
-    width: 97px; } }
+  .wx-source {
+    text-align: center;
+    width: 4rem;
+    color: #fdfb74;
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=wx.css.map */

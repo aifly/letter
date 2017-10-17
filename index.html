@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-	<meta name="format-detection" content="telephone=no,email=no" />
-	<title>新华社号外</title>
-	<script>
-		//document.addEventListener("touchmove",function(e){e.preventDefault();},{ passive: false });
-		document.querySelector('html').style.fontSize=document.documentElement.clientWidth /10 + 'px';
-	</script>
-	
-	<link rel="stylesheet" type="text/css" href="./assets/css/wx.css">
-	<link rel="stylesheet" type="text/css" href="./assets/css/1.css">
-	<style>
-	html{
-		height: 100%;
-	}
-		 body{
-		 	background: #fff url(./assets/images/bg.jpg) no-repeat center;
-		 	height: 100%;
-		 }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <title>新华社号外</title>
+    <script>
+        //document.addEventListener("touchmove",function(e){e.preventDefault();},{ passive: false });
+        document.querySelector('html').style.fontSize=document.documentElement.clientWidth /10 + 'px';
+    </script>
 
-		 #js_article{
-		 	background: #fff;
-		 	box-sizing: border-box;
-		 }
-		
-		.zmiti-photo img{
-		 
-			box-sizing: border-box;
-		}
-		
-	</style>
+    <link rel="stylesheet" type="text/css" href="./assets/css/wx.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/1.css">
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            background: #fff url(./assets/images/bg.jpg) no-repeat center;
+            height: 100%;
+        }
+
+        #js_article{
+            background: #fff;
+            box-sizing: border-box;
+        }
+
+        .zmiti-photo img{
+
+            box-sizing: border-box;
+        }
+
+    </style>
 </head>
 <body>
 
 
 <div id="js_article" class="rich_media" style="display: none;">
-	<div class="zmiti-header" id="zmiti-header" style="display: none;">
-		<img src="./assets/images/img-063.jpg" />
-	</div>
+    <div class="zmiti-header" id="zmiti-header" style="display: none;">
+        <img src="./assets/images/img-063.jpg" />
+    </div>
     <div class="rich_media_inner">
 
         <div id="page-content" class="rich_media_area_primary">
@@ -47,24 +47,31 @@
                 <div class="wx-page-index-inner">
                     <div id="img-content" class="wx-page-index-inner-sub">
 
-                        <div class="wx-index-hw"><img src="assets/images/img-070.png" /></div>
-                        <div class="wx-artitle">
-                            <div class="wx-tit-h5">刚刚，十八大在京开幕</div>
-                            <div class="clearfix"></div>
+                        <div class="wx-index-hw" hidden="">
+                            <img src="assets/images/img-070.png" />
                         </div>
-                        <div class="wx-source">
-                            <i style="color:#ccb18d;">2012-11-8</i>
-                            <i style="color:#ab8a6c;">新华社</i>
-                        </div>
-                        <div class="wx-slide">我要分享</div>
-                        <div class="wx-message">
-                            	<img class="mess-img-a" src="assets/images/img-061.png" width="auto"/>
-                        </div>
-                        <div class="wx-index-text" id="js_content">
-                            <p>11月8日，中国共产党第十八次全国代表大会在北京人民大会堂隆重开幕，胡锦涛同志作报告。
-                            </p>
-                        </div>
-                        <div class="wx-editor">
+                        <div class="zmiti-index-content">
+                            <div class="wx-artitle">
+                                <div class="wx-tit-h5">刚刚，十八大在京开幕</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="wx-source">
+                                <i>2012-11-8</i>
+                                <i>新华社</i>
+                            </div>
+                            <div class="wx-slide">我要分享</div>
+                            <div class="wx-message">
+                                <img class="mess-img-a" src="assets/images/img-061.png" width="auto"/>
+                                <div id="zmiti-barrage-btn" class="zmiti-barrage-btn">
+                                    <img  src="./assets/images/ico-s1.png">
+                                </div>
+                            </div>
+                            <div class="wx-index-text" id="js_content">
+                                <p>11月8日，中国共产党第十八次全国代表大会在北京人民大会堂隆重开幕，胡锦涛同志作报告。
+                                </p>
+                            </div>
+
+                            <div class="wx-editor">
                             <span class="wx-b1">
                                 <img src="assets/images/logo_footer2.png" />
                             </span>
@@ -77,26 +84,30 @@
                                     <img src="assets/images/img-062.png" />
                                 </span>
                             </span>
+                            </div>
+                            <div class="wx-zhubian">
+                                <img src="assets/images/img-064.png" />
+                            </div>
+                            <div class="wx-page-index-inner-sub2">
+
+                                <div class="wx-app-sta">
+                                    <div class="wx-item-ico wx-count-yd">
+                                        <i>收藏量</i><span>0</span>
+                                    </div>
+                                    <div class="wx-item-ico wx-count-dz" id="like3">
+                                        <i class="icon_praise_gray"></i>
+                                        <span>0</span>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="wx-zhubian">
-                            <img src="assets/images/img-064.png" />
-                        </div>
+
+
                     </div>
 
-                    <div class="wx-page-index-inner-sub2">
 
-                        <div class="wx-app-sta">
-                            <div class="wx-item-ico wx-count-yd">
-                                <i>收藏量</i><span>0</span>
-                            </div>
-                            <div class="wx-item-ico wx-count-dz" id="like3">
-                                <i class="icon_praise_gray"></i>
-                                <span>0</span>
-                            </div>
-
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -169,41 +180,41 @@
 </div>
 
 <div class="zmiti-toast">
-	<img src="./assets/images/toast.png">
+    <img src="./assets/images/toast.png">
 </div>
 
 <section id="zmiti-result" style="display: none;">
-	<div class="zmiti-photo  ">
-		<div>长按图像保存到手机</div>
-		<img style="position: relative;z-index: 1;" src='./assets/images/2.png'  />
-	</div>
-<footer class="zmiti-footer" >
-	<section id="zmiti-share-btns">
-		<aside>
-			<img id='zmiti-see' src="./assets/images/see.png">
-		</aside>
-		<aside>
-			<img id="zmiti-mask-btn" src="./assets/images/share-btn.png">
-		</aside>
-	</section>
+    <div class="zmiti-photo  ">
+        <div>长按图像保存到手机</div>
+        <img style="position: relative;z-index: 1;" src='./assets/images/2.png'  />
+    </div>
+    <footer class="zmiti-footer" >
+        <section id="zmiti-share-btns">
+            <aside>
+                <img id='zmiti-see' src="./assets/images/see.png">
+            </aside>
+            <aside>
+                <img id="zmiti-mask-btn" src="./assets/images/share-btn.png">
+            </aside>
+        </section>
 
-	<div>
-		<img src="./assets/images/copyright.png">
-	</div>
-</footer>
-<div class="zmiti-mask" id="zmiti-mask" style="display: none;">
-	
-</div>
+        <div>
+            <img src="./assets/images/copyright.png">
+        </div>
+    </footer>
+    <div class="zmiti-mask" id="zmiti-mask" style="display: none;">
+
+    </div>
 </section>
 <audio src='./assets/music/1.mp3' id="audio"></audio>
-	
 
-	<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script> 
-	<script src='./assets/js/jquery.min.js'></script>
-	<script src='./assets/js/html2canvas.js'></script>
-	<script src='./assets/js/index.js?a=123456'></script>
-	
-	<script type="text/javascript" src="assets/js/wxTanmu2.js"></script>
+
+<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+<script src='./assets/js/jquery.min.js'></script>
+<script src='./assets/js/html2canvas.js'></script>
+<script src='./assets/js/index.js?a=123456'></script>
+
+<script type="text/javascript" src="assets/js/wxTanmu2.js"></script>
 
 </body>
 </html>

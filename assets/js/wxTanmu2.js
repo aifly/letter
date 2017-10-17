@@ -93,7 +93,7 @@ var dataBarrage = new Array();
 $(function() {
         var posource = $(".wx-source").offset();
         $(".wx-slide").css({
-                "top": posource.top
+                "top": 24
             })
             //分享按纽
         var top = document.documentElement.clientHeight - 100;
@@ -101,7 +101,7 @@ $(function() {
                 var scrtop = $(window).scrollTop();
                 if (scrtop <= 50) {
                     $(".wx-slide").css({
-                        "top": 77
+                        "top": 24
                     })
                 } else {
                     $(".wx-slide").css({

@@ -55,7 +55,7 @@ var zmitiUtil = {
 
 			s.setTitile();
 			s.like();
-			//s.animate();
+			s.animate();
 			s.getNum();
 
 			//s.createHeadimgurl('http://wx.qlogo.cn/mmopen/ajNVdqHZLLBdRPD56QKxotqUunpRX0SWvFW9kPLkbDsbU0ibdAXr0MsroicQTZ7MloGWlChPJcya2Via3pq0g704VVkicN1puTstnoJ8QXMk3yU/0')
@@ -142,7 +142,18 @@ var zmitiUtil = {
 			$(this).css({
 				display: 'none'
 			})
-		})
+		});
+
+
+		setTimeout(function() {
+			$('#zmiti-barrage-btn').on('click', function() {
+				this.closed = !this.closed;
+				$('.zmiti-barrage').css({
+					opacity: this.closed ? 0 : 1
+				})
+				$(this).find('img').attr('src', './assets/images/ico-s' + (this.closed ? 2 : 1) + '.png')
+			});
+		}, 100)
 	},
 
 	savePV: function(opt) {
@@ -173,7 +184,7 @@ var zmitiUtil = {
 	},
 	animate: function() {
 		var words = [{
-			"value": "党的十八大以来，以习近平同志为核心的党中央",
+			"value": "党的十八大以来",
 			"color": "#fcffb4",
 			"range": [0, 0.5]
 		}, {
@@ -185,27 +196,15 @@ var zmitiUtil = {
 			"color": "#ffd74e",
 			"range": [0.6, 0.7]
 		}, {
-			"value": "党的十八大以来，以习近平同志为核心的党中央",
+			"value": "中国梦",
 			"color": "#ffffff",
 			"range": [0.2, 1]
-		}, {
-			"value": "传递正能量，弘扬主旋律",
-			"color": "#ffd74e",
-			"range": [0, 0.9]
-		}, {
-			"value": "随着十九大召开的脚步越来越近，全党、全国人民欢欣",
-			"color": "#ffffff",
-			"range": [0.7, 1]
-		}, {
-			"value": "迎接十九大宣传是责任。",
-			"color": "#fcffb4",
-			"range": [0.7, 0.95]
 		}];
 		var html = ''
 		words.forEach(function(w, i) {
-			html += '<div style="color:' + w.color + ';top:' + (30 * (i + 1)) + 'px;-webkit-animation-duration:' + (i + 10) + 's;-webkit-animation-delay:' + ((i * 2 + 1)) + 's" class="zmiti-barrage barrage-animate">' + w.value + '</div>';
+			html += '<div style="color:' + w.color + ';top:' + (30 * (i % 2 + 1)) + 'px;-webkit-animation-duration:' + (i + 10) + 's;-webkit-animation-delay:' + ((i * 2 + 1)) + 's" class="zmiti-barrage barrage-animate">' + w.value + '</div>';
 		});
-		$('.mess-img').html($('.mess-img').html() + html);
+		$('.wx-message').html($('.wx-message').html() + html);
 	},
 	createImg: function() {
 		var s = this;
@@ -413,7 +412,7 @@ var zmitiUtil = {
 			url: 'http://api.zmiti.com/v2/share/useTxtCreateImg',
 			data: {
 				text: nickname,
-				color: 'ab8a6c',
+				color: 'fcffb4',
 				imagewidth: 151 * 10,
 				imageheight: 35 * 10,
 				fontsize: 24 * 10,
